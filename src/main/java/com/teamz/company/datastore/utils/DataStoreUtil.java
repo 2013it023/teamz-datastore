@@ -12,8 +12,7 @@ import com.teamz.company.datastore.service.impl.DataStoreclientServiceImpl;
  * DataStoreUtil - class provides an API to interact with Data store to perform CREATE, READ and
  * DELETE operation.
  * 
- * @author psa9ack
- * @since 09/12/2019
+ * @author Saravanan Perumal
  *
  */
 public class DataStoreUtil {

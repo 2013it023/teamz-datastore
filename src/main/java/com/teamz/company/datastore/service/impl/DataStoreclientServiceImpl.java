@@ -20,7 +20,7 @@ import com.teamz.company.datastore.utils.CommonUtil;
  * DataStoreclientServiceImpl - class contains implementation level information about all the client
  * API's.
  * 
- * @author psa9ack
+ * @author Saravanan Perumal
  *
  */
 public class DataStoreclientServiceImpl implements DataStoreClientService {
@@ -56,12 +56,12 @@ public class DataStoreclientServiceImpl implements DataStoreClientService {
   @Override
   public DataStoreResponse get(String key, String filePath) {
 
-    if (isAlreadyExist(key, CommonUtil.getDeleteKeyFile(filePath))) {
+    int lineNumber = getLineNumber(key, CommonUtil.getKeyFile(filePath));
+
+    if (isAlreadyExist(key, CommonUtil.getDeleteKeyFile(filePath)) || lineNumber == 0) {
       return DataStoreResponse.builder().hasActionError(Boolean.TRUE)
           .message(DataStoreConstants.DATA_NOT_FOUND).build();
     }
-
-    int lineNumber = getLineNumber(key, filePath);
 
     String responseData = "";
     DataStoreResponseBuilder response = DataStoreResponse.builder();
@@ -85,7 +85,7 @@ public class DataStoreclientServiceImpl implements DataStoreClientService {
   @Override
   public DataStoreResponse delete(String key, String filePath) {
 
-    if (isAlreadyExist(key, CommonUtil.getDeleteKeyFile(key))) {
+    if (isAlreadyExist(key, CommonUtil.getDeleteKeyFile(filePath))) {
       return DataStoreResponse.builder().hasActionError(Boolean.TRUE)
           .message(DataStoreConstants.FAILURE_DELETE_MESSAGE).build();
     }
@@ -161,7 +161,7 @@ public class DataStoreclientServiceImpl implements DataStoreClientService {
     List<CompletableFuture<String>> checkList = new ArrayList<>();
     List<String> keyList = new ArrayList<>();
     try {
-      keyList = getKeys(CommonUtil.getKeyFile(filePath));
+      keyList = getKeys(filePath);
     } catch (IOException e) {
       LOGGER.debug("Exception occured when trying to read the keys.");
     }

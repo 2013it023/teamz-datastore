@@ -12,8 +12,7 @@ import com.teamz.company.datastore.exception.DataStoreClientException;
 /**
  * DataStoreClient - class allows client's to create instance to interact with datastore.
  * 
- * @author Saravanan P
- * @since 9/12/2019
+ * @author Saravanan Perumal
  *
  */
 public class DataStoreClient {

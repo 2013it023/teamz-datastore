@@ -2,6 +2,12 @@ package com.teamz.company.datastore.response;
 
 import lombok.Builder;
 
+/**
+ * DataStoreResponse - response object of datastore
+ * 
+ * @author Saravanan Perumal
+ *
+ */
 @Builder
 public class DataStoreResponse {
 

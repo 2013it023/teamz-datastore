@@ -6,7 +6,7 @@ import com.teamz.company.datastore.response.DataStoreResponse;
  * DataStoreClientService contains blue print of all API's, which is used to interact with Data
  * store.
  * 
- * @author psa9ack
+ * @author Saravanan Perumal
  *
  */
 public interface DataStoreClientService {

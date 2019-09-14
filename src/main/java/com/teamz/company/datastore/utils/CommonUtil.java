@@ -16,8 +16,7 @@ import com.teamz.company.datastore.constants.DataStoreConstants;
 /**
  * CommonUtil contains commons methods which is used around this project module.
  * 
- * @author psa9ack
- * @since 12/09/2019
+ * @author Saravanan Perumal
  *
  */
 public class CommonUtil {
