@@ -23,6 +23,12 @@ We can use this project in two different ways.
 
 Then create a client and interact with API's.  
 
+# How it works
+   It will create a three different text files to store the client data, deleted keys and line number along with key when client create an object to interact with API's. The file path will be differ for each client and client object will hold the file path. When client creating an object to interact with API's at the time client need to pass client object via constructor.
+
+
+
+
 Happy coding :blush: !!!
      
    
